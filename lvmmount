@@ -1,0 +1,8 @@
+#!/bin/bash
+#chkconfig: 2345 20 80
+
+vgchange -a y vg_data
+lvchange  -a y /dev/mapper/vg_data-xxx_data
+lvchange  -a y /dev/mapper/vg_data-xxx_log
+mount /dev/mapper/vg_data-xxx_data /home/xxx
+mount /dev/mapper/vg_data-xxx_log /log 
